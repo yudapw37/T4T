@@ -1,0 +1,3923 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Documentation",
+        "version": "1.0.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/api/GetActivityUserId": {
+            "get": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Get Activity UserId",
+                "operationId": "GetActivityUserId",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetActivityLahanUser": {
+            "get": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Get Activity Lahan User",
+                "operationId": "GetActivityLahanUser",
+                "parameters": [
+                    {
+                        "name": "lahan_no",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddActivity": {
+            "post": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Add Activity",
+                "operationId": "AddActivity",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Activity",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "activity_type": {
+                                    "type": "enum",
+                                    "example": "planning/visit/distribution/realitation/monitoring"
+                                },
+                                "activity_date": {
+                                    "type": "date",
+                                    "example": "2021-04-05"
+                                },
+                                "ff_no": {
+                                    "type": "string",
+                                    "example": "12345678"
+                                },
+                                "lahan_no": {
+                                    "type": "string",
+                                    "example": "L00001"
+                                },
+                                "total_trees": {
+                                    "type": "integer",
+                                    "example": "222"
+                                },
+                                "programs": {
+                                    "type": "string",
+                                    "example": "test"
+                                },
+                                "activity_description": {
+                                    "type": "string",
+                                    "example": "Tanam Pohon"
+                                },
+                                "user_id": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "verification_code": {
+                                    "type": "string",
+                                    "example": "1/2/3"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateActivity": {
+            "post": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Update Activity",
+                "operationId": "UpdateActivity",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Activity",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "enum",
+                                    "example": "1"
+                                },
+                                "activity_type": {
+                                    "type": "enum",
+                                    "example": "planning/visit/distribution/realitation/monitoring"
+                                },
+                                "activity_date": {
+                                    "type": "date",
+                                    "example": "2021-04-05"
+                                },
+                                "ff_no": {
+                                    "type": "string",
+                                    "example": "12345678"
+                                },
+                                "lahan_no": {
+                                    "type": "string",
+                                    "example": "L00001"
+                                },
+                                "total_trees": {
+                                    "type": "integer",
+                                    "example": "222"
+                                },
+                                "programs": {
+                                    "type": "string",
+                                    "example": "test"
+                                },
+                                "activity_description": {
+                                    "type": "string",
+                                    "example": "Tanam Pohon"
+                                },
+                                "user_id": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "verification_code": {
+                                    "type": "string",
+                                    "example": "1/2/3"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteActivity": {
+            "post": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Delete Activity",
+                "operationId": "DeleteActivity",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Activity",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "enum",
+                                    "example": "1"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetActivityDetail": {
+            "get": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Get Activity Detail",
+                "operationId": "GetActivityDetail",
+                "parameters": [
+                    {
+                        "name": "activity_no",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddActivityDetail": {
+            "post": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Add Activity Detail",
+                "operationId": "AddActivityDetail",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Activity Detail",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "activity_no": {
+                                    "type": "string",
+                                    "example": "A000001"
+                                },
+                                "tree_code": {
+                                    "type": "string",
+                                    "example": "T0001"
+                                },
+                                "amount": {
+                                    "type": "string",
+                                    "example": "200"
+                                },
+                                "tree_status": {
+                                    "type": "string",
+                                    "example": "dead/life"
+                                },
+                                "growth_percentage": {
+                                    "type": "integer",
+                                    "example": "80"
+                                },
+                                "diameter": {
+                                    "type": "integer",
+                                    "example": "20"
+                                },
+                                "high": {
+                                    "type": "integer",
+                                    "example": "100"
+                                },
+                                "polybags": {
+                                    "type": "boolean",
+                                    "example": "0/1"
+                                },
+                                "list_of_things": {
+                                    "type": "string",
+                                    "example": "List Of Things"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateActivityDetail": {
+            "post": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Update Activity Detail",
+                "operationId": "UpdateActivityDetail",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Activity Detail",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "tree_code": {
+                                    "type": "string",
+                                    "example": "T0001"
+                                },
+                                "amount": {
+                                    "type": "string",
+                                    "example": "200"
+                                },
+                                "tree_status": {
+                                    "type": "string",
+                                    "example": "dead/life"
+                                },
+                                "growth_percentage": {
+                                    "type": "integer",
+                                    "example": "80"
+                                },
+                                "diameter": {
+                                    "type": "integer",
+                                    "example": "20"
+                                },
+                                "high": {
+                                    "type": "integer",
+                                    "example": "100"
+                                },
+                                "polybags": {
+                                    "type": "boolean",
+                                    "example": "0/1"
+                                },
+                                "list_of_things": {
+                                    "type": "string",
+                                    "example": "List Of Things"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteActivityDetail": {
+            "post": {
+                "tags": [
+                    "Activity"
+                ],
+                "summary": "Delete Activity Detail",
+                "operationId": "DeleteActivityDetail",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Activity Detail",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "enum",
+                                    "example": "1"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFarmerNotComplete": {
+            "get": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Get Farmers Not Complete",
+                "operationId": "GetFarmerNotComplete",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFarmerCompleteNotApprove": {
+            "get": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Get Farmers Complete Not Approve",
+                "operationId": "GetFarmerCompleteNotApprove",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFarmerCompleteAndApprove": {
+            "get": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Get Farmers Complete And Approve",
+                "operationId": "GetFarmerCompleteAndApprove",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFarmerDetail": {
+            "get": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Get Get Farmer Detail",
+                "operationId": "GetFarmerDetail",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFarmerNoDropDown": {
+            "get": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Get FarmerNumber DropDown",
+                "operationId": "GetFarmerNoDropDown",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddMandatoryFarmer": {
+            "post": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Add Mandatory Farmer",
+                "operationId": "AddMandatoryFarmer",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Mandatory Farmer",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "ktp_no": {
+                                    "type": "string",
+                                    "example": "0909090909"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Budi Indra"
+                                },
+                                "birthday": {
+                                    "type": "date",
+                                    "example": "2000-10-20"
+                                },
+                                "religion": {
+                                    "type": "string",
+                                    "example": "Islam"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "Jl Cemara No 22, Kemiri, Salatiga"
+                                },
+                                "village": {
+                                    "type": "string",
+                                    "example": "33.05.10.18"
+                                },
+                                "kecamatan": {
+                                    "type": "string",
+                                    "example": "33.05.10"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "example": "33.05"
+                                },
+                                "province": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "marrital_status": {
+                                    "type": "string",
+                                    "example": "Kawin"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "085777771111"
+                                },
+                                "ethnic": {
+                                    "type": "string",
+                                    "example": "Jawa"
+                                },
+                                "origin": {
+                                    "type": "string",
+                                    "example": "lokal"
+                                },
+                                "gender": {
+                                    "type": "string",
+                                    "example": "male"
+                                },
+                                "join_date": {
+                                    "type": "date",
+                                    "example": "2021-03-20"
+                                },
+                                "number_family_member": {
+                                    "type": "int",
+                                    "example": "2"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "024"
+                                },
+                                "target_area": {
+                                    "type": "string",
+                                    "example": "test"
+                                },
+                                "active": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "user_id": {
+                                    "type": "int",
+                                    "example": "2"
+                                },
+                                "ktp_document": {
+                                    "type": "int",
+                                    "example": "test"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateFarmer": {
+            "post": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Update Farmer",
+                "operationId": "UpdateFarmer",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Farmer",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "2"
+                                },
+                                "ktp_no": {
+                                    "type": "string",
+                                    "example": "0909090909"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Budi Indra"
+                                },
+                                "birthday": {
+                                    "type": "date",
+                                    "example": "2000-10-20"
+                                },
+                                "religion": {
+                                    "type": "string",
+                                    "example": "Islam"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "Jl Cemara No 22, Kemiri, Salatiga"
+                                },
+                                "village": {
+                                    "type": "string",
+                                    "example": "33.05.10.18"
+                                },
+                                "kecamatan": {
+                                    "type": "string",
+                                    "example": "33.05.10"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "example": "33.05"
+                                },
+                                "province": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "marrital_status": {
+                                    "type": "string",
+                                    "example": "Kawin"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "085777771111"
+                                },
+                                "ethnic": {
+                                    "type": "string",
+                                    "example": "Jawa"
+                                },
+                                "origin": {
+                                    "type": "string",
+                                    "example": "lokal"
+                                },
+                                "gender": {
+                                    "type": "string",
+                                    "example": "male"
+                                },
+                                "join_date": {
+                                    "type": "date",
+                                    "example": "2021-03-20"
+                                },
+                                "number_family_member": {
+                                    "type": "int",
+                                    "example": "2"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "024"
+                                },
+                                "target_area": {
+                                    "type": "string",
+                                    "example": "test"
+                                },
+                                "active": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "user_id": {
+                                    "type": "int",
+                                    "example": "2"
+                                },
+                                "ktp_document": {
+                                    "type": "int",
+                                    "example": "test"
+                                },
+                                "post_code": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "group_no": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "mou_no": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "main_income": {
+                                    "type": "int",
+                                    "example": "nullable"
+                                },
+                                "side_income": {
+                                    "type": "int",
+                                    "example": "nullable"
+                                },
+                                "main_job": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "side_job": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "education": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "non_formal_education": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                },
+                                "farmer_profile": {
+                                    "type": "string",
+                                    "example": "nullable"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/SoftDeleteFarmer": {
+            "post": {
+                "tags": [
+                    "Farmers"
+                ],
+                "summary": "Soft Delete Farmer",
+                "operationId": "SoftDeleteFarmer",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Soft Delete Farmer",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "2"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFieldFacilitator": {
+            "get": {
+                "tags": [
+                    "FieldFacilitator"
+                ],
+                "summary": "Get Field Facilitator",
+                "operationId": "GetFieldFacilitator",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetFieldFacilitatorDetail": {
+            "get": {
+                "tags": [
+                    "FieldFacilitator"
+                ],
+                "summary": "Get Field Facilitator Detail",
+                "operationId": "GetFieldFacilitatorDetail",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddFieldFacilitator": {
+            "post": {
+                "tags": [
+                    "FieldFacilitator"
+                ],
+                "summary": "Add Field Facilitator",
+                "operationId": "AddFieldFacilitator",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Field Facilitator",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Mangga"
+                                },
+                                "birthday": {
+                                    "type": "date",
+                                    "example": "1990-01-30"
+                                },
+                                "religion": {
+                                    "type": "string",
+                                    "example": "islam"
+                                },
+                                "gender": {
+                                    "type": "string",
+                                    "example": "male/female"
+                                },
+                                "ktp_no": {
+                                    "type": "string",
+                                    "example": "33101700020001"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "Jl Cemara 11"
+                                },
+                                "village": {
+                                    "type": "string",
+                                    "example": "32.04.30.01"
+                                },
+                                "kecamatan": {
+                                    "type": "string",
+                                    "example": "32.04.30.01"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "example": "32.04"
+                                },
+                                "province": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "023"
+                                },
+                                "target_area": {
+                                    "type": "string",
+                                    "example": "023001"
+                                },
+                                "active": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "user_id": {
+                                    "type": "string",
+                                    "example": "023"
+                                },
+                                "marrital": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "join_date": {
+                                    "type": "date",
+                                    "example": "Nullable"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "post_code": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "bank_account": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "bank_branch": {
+                                    "type": "date",
+                                    "example": "Nullable"
+                                },
+                                "bank_name": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "ff_photo": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "ff_photo_path": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateFieldFacilitator": {
+            "post": {
+                "tags": [
+                    "FieldFacilitator"
+                ],
+                "summary": "Update Field Facilitator",
+                "operationId": "UpdateFieldFacilitator",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Field Facilitator",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Mangga"
+                                },
+                                "birthday": {
+                                    "type": "date",
+                                    "example": "1990-01-30"
+                                },
+                                "religion": {
+                                    "type": "string",
+                                    "example": "islam"
+                                },
+                                "gender": {
+                                    "type": "string",
+                                    "example": "male/female"
+                                },
+                                "ktp_no": {
+                                    "type": "string",
+                                    "example": "33101700020001"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "Jl Cemara 11"
+                                },
+                                "village": {
+                                    "type": "string",
+                                    "example": "32.04.30.01"
+                                },
+                                "kecamatan": {
+                                    "type": "string",
+                                    "example": "32.04.30.01"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "example": "32.04"
+                                },
+                                "province": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "023"
+                                },
+                                "target_area": {
+                                    "type": "string",
+                                    "example": "023001"
+                                },
+                                "active": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "user_id": {
+                                    "type": "string",
+                                    "example": "023"
+                                },
+                                "marrital": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "join_date": {
+                                    "type": "date",
+                                    "example": "Nullable"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "post_code": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "bank_account": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "bank_branch": {
+                                    "type": "date",
+                                    "example": "Nullable"
+                                },
+                                "bank_name": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "ff_photo": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "ff_photo_path": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteFieldFacilitator": {
+            "post": {
+                "tags": [
+                    "FieldFacilitator"
+                ],
+                "summary": "Delete Field Facilitator",
+                "operationId": "DeleteFieldFacilitator",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Field Facilitator",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetLahanNotComplete": {
+            "get": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Get Lahan Not Complete",
+                "operationId": "GetLahanNotComplete",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "farmer_no",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetLahanCompleteNotApprove": {
+            "get": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Get Lahan Complete Not Approve",
+                "operationId": "GetLahanCompleteNotApprove",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "farmer_no",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetCompleteAndApprove": {
+            "get": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Get Complete And Approve",
+                "operationId": "GetCompleteAndApprove",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "farmer_no",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetLahanDetail": {
+            "get": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Get Lahan Detail",
+                "operationId": "GetLahanDetail",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetLahanDetailBarcode": {
+            "get": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Get Lahan Detail Barcode",
+                "operationId": "GetLahanDetailBarcode",
+                "parameters": [
+                    {
+                        "name": "barcode",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddMandatoryLahan": {
+            "post": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Add Mandatory Lahan",
+                "operationId": "AddMandatoryLahan",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Mandatory Lahan",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "document_no": {
+                                    "type": "string",
+                                    "example": "0909090909"
+                                },
+                                "land_area": {
+                                    "type": "string",
+                                    "example": "8200.00"
+                                },
+                                "longitude": {
+                                    "type": "date",
+                                    "example": "110.3300613"
+                                },
+                                "latitude": {
+                                    "type": "string",
+                                    "example": "-7.580778"
+                                },
+                                "coordinate": {
+                                    "type": "string",
+                                    "example": "S734.847E11019.935"
+                                },
+                                "village": {
+                                    "type": "string",
+                                    "example": "33.05.10.18"
+                                },
+                                "kecamatan": {
+                                    "type": "string",
+                                    "example": "33.05.10"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "example": "33.05"
+                                },
+                                "province": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "025"
+                                },
+                                "target_area": {
+                                    "type": "string",
+                                    "example": "025001"
+                                },
+                                "farmer_no": {
+                                    "type": "string",
+                                    "example": "F00000001"
+                                },
+                                "fertilizer": {
+                                    "type": "string",
+                                    "example": "Kimia"
+                                },
+                                "pesticide": {
+                                    "type": "string",
+                                    "example": "Kimia"
+                                },
+                                "sppt": {
+                                    "type": "string",
+                                    "example": "File"
+                                },
+                                "active": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "user_id": {
+                                    "type": "int",
+                                    "example": "2"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddMandatoryLahanBarcode": {
+            "post": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Add Mandatory Lahan Barcode",
+                "operationId": "AddMandatoryLahanBarcode",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Mandatory Lahan Barcode",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "user_id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "barcode": {
+                                    "type": "string",
+                                    "example": "L0000001"
+                                },
+                                "longitude": {
+                                    "type": "string",
+                                    "example": "110.3300613"
+                                },
+                                "latitude": {
+                                    "type": "string",
+                                    "example": "-7.580778"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateLahan": {
+            "post": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Update Lahan",
+                "operationId": "UpdateLahan",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Lahan",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": "0909090909"
+                                },
+                                "document_no": {
+                                    "type": "string",
+                                    "example": "0909090909"
+                                },
+                                "land_area": {
+                                    "type": "string",
+                                    "example": "8200.00"
+                                },
+                                "longitude": {
+                                    "type": "date",
+                                    "example": "110.3300613"
+                                },
+                                "latitude": {
+                                    "type": "string",
+                                    "example": "-7.580778"
+                                },
+                                "coordinate": {
+                                    "type": "string",
+                                    "example": "S734.847E11019.935"
+                                },
+                                "village": {
+                                    "type": "string",
+                                    "example": "33.05.10.18"
+                                },
+                                "kecamatan": {
+                                    "type": "string",
+                                    "example": "33.05.10"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "example": "33.05"
+                                },
+                                "province": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "025"
+                                },
+                                "target_area": {
+                                    "type": "string",
+                                    "example": "025001"
+                                },
+                                "farmer_no": {
+                                    "type": "string",
+                                    "example": "F00000001"
+                                },
+                                "fertilizer": {
+                                    "type": "string",
+                                    "example": "Kimia"
+                                },
+                                "pesticide": {
+                                    "type": "string",
+                                    "example": "Kimia"
+                                },
+                                "sppt": {
+                                    "type": "string",
+                                    "example": "File"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "photo1": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "photo2": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "photo3": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "photo4": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "group_no": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "planting_area": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "polygon": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "elevation": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "soil_type": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "current_crops": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "tutupan_lahan": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "kelerengan_lahan": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "access_to_water_sources": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "access_to_lahan": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "active": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "user_id": {
+                                    "type": "int",
+                                    "example": "2"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/SoftDeleteLahan": {
+            "post": {
+                "tags": [
+                    "Lahan"
+                ],
+                "summary": "Soft Delete Lahan",
+                "operationId": "SoftDeleteLahan",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Soft Delete Lahan",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "2"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetTrees": {
+            "get": {
+                "tags": [
+                    "Trees"
+                ],
+                "summary": "Get Trees",
+                "operationId": "GetTrees",
+                "parameters": [
+                    {
+                        "name": "tree_name",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetTreesDetail": {
+            "get": {
+                "tags": [
+                    "Trees"
+                ],
+                "summary": "Get Trees Detail",
+                "operationId": "GetTreesDetail",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddTrees": {
+            "post": {
+                "tags": [
+                    "Trees"
+                ],
+                "summary": "Add Trees",
+                "operationId": "AddTrees",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Trees",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "tree_name": {
+                                    "type": "string",
+                                    "example": "Mangga"
+                                },
+                                "scientific_name": {
+                                    "type": "string",
+                                    "example": "Mangifera indica"
+                                },
+                                "common_name": {
+                                    "type": "string",
+                                    "example": "Spanish Cherry"
+                                },
+                                "short_information": {
+                                    "type": "string",
+                                    "example": "Mangifera indica is a large evergreen tree to 20 m tall with a dark green. umbrella-shaped crown"
+                                },
+                                "tree_category": {
+                                    "type": "string",
+                                    "example": "Pohon"
+                                },
+                                "english_name": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "product_list": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "estimate_income": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "co2_capture": {
+                                    "type": "integer",
+                                    "example": 0
+                                },
+                                "photo1": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "photo2": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateTrees": {
+            "post": {
+                "tags": [
+                    "Trees"
+                ],
+                "summary": "Update Trees",
+                "operationId": "UpdateTrees",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Trees",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "tree_name": {
+                                    "type": "string",
+                                    "example": "Mangga"
+                                },
+                                "scientific_name": {
+                                    "type": "string",
+                                    "example": "Mangifera indica"
+                                },
+                                "common_name": {
+                                    "type": "string",
+                                    "example": "Spanish Cherry"
+                                },
+                                "short_information": {
+                                    "type": "string",
+                                    "example": "Mangifera indica is a large evergreen tree to 20 m tall with a dark green. umbrella-shaped crown"
+                                },
+                                "tree_category": {
+                                    "type": "string",
+                                    "example": "Pohon"
+                                },
+                                "english_name": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "product_list": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "estimate_income": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "co2_capture": {
+                                    "type": "integer",
+                                    "example": 0
+                                },
+                                "photo1": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                },
+                                "photo2": {
+                                    "type": "string",
+                                    "example": "Nullable"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteTrees": {
+            "post": {
+                "tags": [
+                    "Trees"
+                ],
+                "summary": "Delete Trees",
+                "operationId": "DeleteTrees",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Trees",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetProvince": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Province",
+                "operationId": "GetProvince",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetKabupaten": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Kabupaten",
+                "operationId": "GetKabupaten",
+                "parameters": [
+                    {
+                        "name": "province_code",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetKecamatan": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Kecamatan",
+                "operationId": "GetKecamatan",
+                "parameters": [
+                    {
+                        "name": "kabupaten_no",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetDesa": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Desa",
+                "operationId": "GetDesa",
+                "parameters": [
+                    {
+                        "name": "kode_kecamatan",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddProvince": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Province",
+                "operationId": "AddProvince",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Province",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "province_code": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Jawa Tengah"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddKabupaten": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Kabupaten",
+                "operationId": "AddKabupaten",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Kabupaten",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "kabupaten_no": {
+                                    "type": "string",
+                                    "example": "33.04"
+                                },
+                                "kab_code": {
+                                    "type": "string",
+                                    "example": "04"
+                                },
+                                "province_code": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Kab. Banjarnegara"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddKecamatan": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Kecamatan",
+                "operationId": "AddKecamatan",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Kecamatan",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "kabupaten_no": {
+                                    "type": "string",
+                                    "example": "33.04"
+                                },
+                                "kode_kecamatan": {
+                                    "type": "string",
+                                    "example": "33.04.09"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Banjarnegara"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddDesa": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Desa",
+                "operationId": "AddDesa",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Desa",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "kode_desa": {
+                                    "type": "string",
+                                    "example": "33.04.09.02"
+                                },
+                                "kode_kecamatan": {
+                                    "type": "string",
+                                    "example": "33.04.09"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Desa Banjar"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateProvince": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Province",
+                "operationId": "UpdateProvince",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Province",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "province_code": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Jawa Tengah"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateKabupaten": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Kabupaten",
+                "operationId": "UpdateKabupaten",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Kabupaten",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "kabupaten_no": {
+                                    "type": "string",
+                                    "example": "33.04"
+                                },
+                                "kab_code": {
+                                    "type": "string",
+                                    "example": "04"
+                                },
+                                "province_code": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Kab. Banjarnegara"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateKecamatan": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Kecamatan",
+                "operationId": "UpdateKecamatan",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "UpdateKecamatan",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "kabupaten_no": {
+                                    "type": "string",
+                                    "example": "33.04"
+                                },
+                                "kode_kecamatan": {
+                                    "type": "string",
+                                    "example": "33.04.09"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Banjarnegara"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateDesa": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Desa",
+                "operationId": "UpdateDesa",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Desa",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "kode_desa": {
+                                    "type": "string",
+                                    "example": "33.04.09.02"
+                                },
+                                "kode_kecamatan": {
+                                    "type": "string",
+                                    "example": "33.04.09"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Desa Banjar"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteProvince": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Province",
+                "operationId": "DeleteProvince",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Province",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteKabupaten": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Kabupaten",
+                "operationId": "DeleteKabupaten",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Kabupaten",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteKecamatan": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Kecamatan",
+                "operationId": "DeleteKecamatan",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Kecamatan",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteDesa": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Desa",
+                "operationId": "DeleteDesa",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Desa",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetManagementUnit": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Management Unit",
+                "operationId": "GetManagementUnit",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetTargetArea": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Target Area",
+                "operationId": "GetTargetArea",
+                "parameters": [
+                    {
+                        "name": "mu_no",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddManagementUnit": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Management Unit",
+                "operationId": "AddManagementUnit",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Management Unit",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Kebumen"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddTargetArea": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Target Area",
+                "operationId": "AddTargetArea",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Target Area",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "014"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Bojong"
+                                },
+                                "kab_code": {
+                                    "type": "string",
+                                    "example": "05"
+                                },
+                                "fc_no": {
+                                    "type": "string",
+                                    "example": "140120090070"
+                                },
+                                "luas": {
+                                    "type": "int",
+                                    "example": "100.0"
+                                },
+                                "province_code": {
+                                    "type": "string",
+                                    "example": "JT"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateManagementUnit": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Management Unit",
+                "operationId": "UpdateManagementUnit",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Management Unit",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Kebumen"
+                                },
+                                "active": {
+                                    "type": "string",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateTargetArea": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Target Area",
+                "operationId": "UpdateTargetArea",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Target Area",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Bojong1"
+                                },
+                                "mu_no": {
+                                    "type": "string",
+                                    "example": "014"
+                                },
+                                "kab_code": {
+                                    "type": "string",
+                                    "example": "05"
+                                },
+                                "fc_no": {
+                                    "type": "string",
+                                    "example": "140120090070"
+                                },
+                                "luas": {
+                                    "type": "int",
+                                    "example": "100.0"
+                                },
+                                "province_code": {
+                                    "type": "string",
+                                    "example": "JT"
+                                },
+                                "active": {
+                                    "type": "string",
+                                    "example": 1
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteManagementUnit": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Management Unit",
+                "operationId": "DeleteManagementUnit",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Management Unit",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "1"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteTargetArea": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Target Area",
+                "operationId": "DeleteTargetArea",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Target Area",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "1"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/GetVerification": {
+            "get": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Get Verification",
+                "operationId": "GetVerification",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/AddVerification": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Add Verification",
+                "operationId": "AddVerification",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Add Verification",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "verification_code": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "example": "verification_fc/verification_um/verification_plan/verification_pm"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/UpdateVerification": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Update Verification",
+                "operationId": "UpdateVerification",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Update Verification",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "verification_code": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "type": {
+                                    "type": "enum",
+                                    "example": "verification_fc/verification_um/verification_plan/verification_pm"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeleteVerification": {
+            "post": {
+                "tags": [
+                    "Utilities"
+                ],
+                "summary": "Delete Verification",
+                "operationId": "DeleteVerification",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Delete Verification",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": "1"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/Regist": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Regist User",
+                "operationId": "UsersRegist",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Regist User",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "nama"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "nama@mail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "example": "nama123"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Login": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Login User",
+                "operationId": "UsersLogin",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Login User",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "email": {
+                                    "type": "string",
+                                    "example": "nama@mail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "example": "nama123"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Logout": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Logout User",
+                "operationId": "UsersLogout",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/ForgotPassword": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Forgot Password User",
+                "operationId": "ForgotPassword",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Forgot Password User",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "email": {
+                                    "type": "string",
+                                    "example": "nama@mail.com"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/EditProfile": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Edit Profile User",
+                "operationId": "EditProfile",
+                "parameters": [
+                    {
+                        "name": "Parameters",
+                        "in": "body",
+                        "description": "Edit Profile User",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "nama"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "nama@mail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "example": "1QwOp@"
+                                },
+                                "new_password": {
+                                    "type": "string",
+                                    "example": "1QwOp@"
+                                },
+                                "confirm_password": {
+                                    "type": "string",
+                                    "example": "1QwOp@"
+                                }
+                            }
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {},
+    "securityDefinitions": {
+        "apiAuth": {
+            "type": "apiKey",
+            "description": "Login with email and password to get the authentication token",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
